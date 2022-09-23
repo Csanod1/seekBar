@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button szinvaltasGomb;
     private TextView szinvaltasSzoveg;
     private Random rnd;
+    private SeekBar seekbarSample;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         szinvaltasGomb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                szinvaltasSzoveg.setText(bekeres.getText());
                 int red = rnd.nextInt(256);
                 int green = rnd.nextInt(256);
                 int blue = rnd.nextInt(256);
@@ -53,6 +56,21 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     szinvaltasSzoveg.setTextColor(Color.WHITE);
                 }
+            }
+        });
+        seekbarSample.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
 
             }
         });
@@ -65,5 +83,6 @@ public class MainActivity extends AppCompatActivity {
         kisbetusGomb = findViewById(R.id.kisbetusGomb);
         szinvaltasGomb = findViewById(R.id.szinvaltasGomb);
         szinvaltasSzoveg = findViewById(R.id.szinvaltosSzoveg);
+        seekbarSample = findViewById(R.id.seekbarSample);
     }
 }

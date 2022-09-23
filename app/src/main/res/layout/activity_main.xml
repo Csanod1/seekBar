@@ -10,33 +10,34 @@
     android:id="@+id/layout">
 
 
-
     <EditText
-        android:layout_width="match_parent"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"
-        android:text=""
         android:id="@+id/bekeres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textSize="25sp"/>
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="25sp" />
+
     <Button
+        android:id="@+id/nagybetusGomb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nagy betűs szöveg"
-        android:background="@color/purple_500"
         android:layout_below="@+id/bekeres"
         android:layout_centerInParent="true"
-        android:id="@+id/nagybetusGomb"
-        android:layout_marginTop="15sp"/>
+        android:layout_marginTop="15sp"
+        android:background="@color/purple_500"
+        android:text="Nagy betűs szöveg" />
+
     <Button
+        android:id="@+id/kisbetusGomb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kis betős szöveg"
-        android:background="@color/purple_500"
         android:layout_below="@+id/nagybetusGomb"
         android:layout_centerInParent="true"
-        android:id="@+id/kisbetusGomb"
-        android:layout_marginTop="15sp"/>
+        android:layout_marginTop="15sp"
+        android:background="@color/purple_500"
+        android:text="Kis betős szöveg" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,5 +57,21 @@
         android:textSize="25sp"
         android:layout_marginTop="15sp"/>
 
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/szinvaltosSzoveg"
+        android:layout_marginTop="2dp"
+        android:max="255"
+        android:progress="0"
+        android:progressTint="#F44336"
+        android:id="@+id/seekbarSample"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekbarSample"
+        android:text="asdasd"
+        android:gravity="center"
+        android:textAlignment="center"/> <!-- Mindegy hogy textAlignmentet vagy gravity használunk -->
 
 </RelativeLayout>
