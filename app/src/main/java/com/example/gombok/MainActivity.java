@@ -2,12 +2,15 @@ package com.example.gombok;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private RelativeLayout layout;
@@ -16,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button kisbetusGomb;
     private Button szinvaltasGomb;
     private TextView szinvaltasSzoveg;
+    private Random rnd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,22 +27,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init();
-
         nagybetusGomb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bekeres.setInputType(3);
+                szinvaltasSzoveg.setInputType(3);
+                szinvaltasSzoveg.setText(bekeres.getText());
             }
         });
         kisbetusGomb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bekeres.setInputType(0);
+                szinvaltasSzoveg.setInputType(0);
+                szinvaltasSzoveg.setText(bekeres.getText());
             }
         });
         szinvaltasGomb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int red = rnd.nextInt(256);
+                int green = rnd.nextInt(256);
+                int blue = rnd.nextInt(256);
+                szinvaltasSzoveg.setBackgroundColor(Color.rgb(red, green, blue));
+                if ((red+green+blue) > 450){
+                    szinvaltasSzoveg.setTextColor(Color.BLACK);
+                }else{
+                    szinvaltasSzoveg.setTextColor(Color.WHITE);
+                }
 
             }
         });
